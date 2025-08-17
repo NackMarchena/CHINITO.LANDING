@@ -1,0 +1,147 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #111;
+  color: #fff;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #222;
+  position: sticky;
+  top: 0;
+}
+header .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+header nav ul li a:hover {
+  color: #1db954;
+}
+
+/* Hero */
+.hero {
+  background: url('banner.jpg') center/cover no-repeat;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+.hero-text h1 {
+  font-size: 2.5rem;
+}
+.hero-text .btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #1db954;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.hero-text .btn:hover {
+  background: #17a74a;
+}
+
+/* Slider */
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 70vh;
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+.slide img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+}
+.caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.6);
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+.controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0 20px;
+}
+.controls span {
+  user-select: none;
+}
+
+/* Contacto */
+.contacto {
+  text-align: center;
+  padding: 50px 20px;
+  background: #181818;
+}
+.contacto .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #1db954;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+}
+.contacto .btn:hover {
+  background: #17a74a;
+}
+
+/* Botón flotante WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+.whatsapp-float:hover {
+  background: #20b257;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  font-size: 0.9rem;
+}
