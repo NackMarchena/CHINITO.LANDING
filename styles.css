@@ -2,55 +2,111 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #111;
+  background: #111111;
   color: #fff;
 }
 
 /* Header */
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background: #222;
+  background: #0338e6;
   position: sticky;
   top: 0;
+  z-index: 1000; /*  muy importante para que quede por encima del carrusel */
 }
+
+/* Logo */
 header .logo {
   font-size: 1.2rem;
   font-weight: bold;
+  color: #fff; /*  asegura que se vea sobre el fondo */
 }
+
+/* Menú */
 header nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
+  margin: 0; /*  evita que se desplace por márgenes extra */
+  padding: 0;
 }
+
 header nav ul li a {
   color: #fff;
   text-decoration: none;
   transition: 0.3s;
 }
+
 header nav ul li a:hover {
-  color: #1db954;
+  color: #222;
 }
 
-/* Hero */
+
+/* HERO */
 .hero {
-  background: url('banner.jpg') center/cover no-repeat;
-  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a, #1f1f1f);
+  color: white;
   padding: 20px;
 }
+
+/* ANIMACIÓN */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 2.5s ease-out forwards;
+}
+
+.fade-in.delay-0 {
+  animation-delay: 0.3s;
+}
+.fade-in.delay-1 {
+  animation-delay: 0.8s;
+}
+.fade-in.delay-2 {
+  animation-delay: 1.3s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* RESPONSIVE */
 .hero-text h1 {
   font-size: 2.5rem;
+}
+.hero-text p {
+  font-size: 1.2rem;
+}
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
 }
 .hero-text .btn {
   margin-top: 20px;
   padding: 12px 25px;
-  background: #1db954;
+  background: #0338e6;
   color: #fff;
   border-radius: 25px;
   text-decoration: none;
@@ -58,15 +114,17 @@ header nav ul li a:hover {
   transition: 0.3s;
 }
 .hero-text .btn:hover {
-  background: #17a74a;
+  background: #0338e6;
 }
+
 
 /* Slider */
 .slider {
   position: relative;
   overflow: hidden;
-  height: 70vh;
+  height: auto; /* se ajusta a la imagen */
 }
+
 .slides {
   display: flex;
   transition: transform 0.5s ease-in-out;
@@ -76,10 +134,17 @@ header nav ul li a:hover {
   position: relative;
 }
 .slide img {
-  width: 100%;
-  height: 70vh;
-  object-fit: cover;
+  max-width: 100%;   /* nunca más ancho que el contenedor */
+  max-height: 80vh;  /* límite de altura en pantalla */
+  height: auto;      /* mantiene proporción original */
+  width: auto;       /* evita deformaciones */
+  object-fit: contain; /* asegura que se vea completa sin recorte */
+  display: block;
+  margin: 0 auto;    /* centra la imagen */
+  background: #000;  /* opcional, rellena si sobra espacio */
 }
+
+
 .caption {
   position: absolute;
   bottom: 20px;
@@ -88,19 +153,30 @@ header nav ul li a:hover {
   padding: 10px 15px;
   border-radius: 8px;
 }
-.controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 0 20px;
-}
+ .controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* manda uno a la izq y otro a la der */
+    transform: translateY(-50%);
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
 .controls span {
-  user-select: none;
-}
+    cursor: pointer;
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    user-select: none;
+    transition: 0.3s;
+  }
+
+  .controls span:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
 
 /* Contacto */
 .contacto {
@@ -112,7 +188,7 @@ header nav ul li a:hover {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 25px;
-  background: #1db954;
+  background: #0338e6;
   color: #fff;
   border-radius: 25px;
   text-decoration: none;
@@ -126,7 +202,7 @@ header nav ul li a:hover {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #25D366;
+  background: #0338e6;
   color: #fff;
   font-size: 1.8rem;
   padding: 15px;
@@ -135,7 +211,7 @@ header nav ul li a:hover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.3);
 }
 .whatsapp-float:hover {
-  background: #20b257;
+  background: #0338e6;
 }
 
 /* Footer */

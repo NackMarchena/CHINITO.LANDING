@@ -24,4 +24,4 @@ prev.addEventListener("click", () => {
 setInterval(() => {
   index = (index + 1) % slides.length;
   showSlide(index);
-}, 5000);
+}, 20000);
