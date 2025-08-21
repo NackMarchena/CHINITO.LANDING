@@ -1,4 +1,6 @@
+// Ckru Off 
 let index = 0;
+
 const slides = document.querySelectorAll(".slide");
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
