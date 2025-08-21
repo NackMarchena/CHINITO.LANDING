@@ -1,6 +1,11 @@
 // Ckru Off 
-let index = 0;
 
+const menuToggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav");
+menuToggle.addEventListener("click", () => {
+nav.classList.toggle("show");});
+
+let index = 0;
 const slides = document.querySelectorAll(".slide");
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
@@ -29,15 +34,18 @@ setInterval(() => {
 }, 20000);
 
 
-const video = document.getElementById("hero-video");
+const video = document.querySelector(".hero-video");
 const soundBtn = document.getElementById("sound-toggle");
 
 soundBtn.addEventListener("click", () => {
   if (video.muted) {
     video.muted = false;
-    soundBtn.textContent = "🔇"; // cambiar icono
+    soundBtn.textContent = "🔊"; // cambiar icono
   } else {
     video.muted = true;
-    soundBtn.textContent = "🔊";
+    soundBtn.textContent = "🔇";
   }
 });
+
+
+

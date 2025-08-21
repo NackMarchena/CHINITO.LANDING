@@ -9,29 +9,31 @@
 </head>
 <body>
   <!-- HEADER -->
-  <header>
-    <div class="logo">🎬 Streaming Chinito</div>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#promos">Promociones</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="header">
+  <div class="logo">Streaming Chinito</div>
+
+  <!-- Botón hamburguesa -->
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+
+  <!-- Menú de navegación -->
+  <nav class="nav" id="nav">
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+
 
   <!-- HERO -->
 <!-- HERO -->
 <section id="inicio" class="hero">
   <!-- Video de fondo -->
-  <video  autoplay muted loop playsinline id="hero-video">
+  <video  autoplay muted loop playsinline class="hero-video">
     <source src="img/banner.mp4" type="video/mp4">
   </video>
   <!-- Texto encima del video -->
   <div class="hero-text">
-    <h1 class="fade-in delay-0"></h1>
-    <p class="fade-in delay-1"></p>
-    <br /><br /><br /><br /><br /><br /><br /><br/><br/><br/>
     <a href="https://api.whatsapp.com/send?phone=51921862785&text=%C2%A1Hola!%20Estoy%20interesado%20en%20contratar%20los%20servicios%20de%20streaming.%20%C2%BFMe%20puedes%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F" 
        target="_blank" 
        class="btn fade-in delay-2">
@@ -119,6 +121,8 @@
   <!-- CONTACTO -->
   <section id="contacto" class="contacto">
     <h2>Contáctanos</h2>
+    <h2>📱+51 921 862 785 📱</h2>
+
     <p>Resolvemos tus dudas y activamos tu cuenta al instante.</p>
     <a href="https://api.whatsapp.com/send?phone=51921862785&text=%C2%A1Hola!%20Estoy%20interesado%20en%20contratar%20los%20servicios%20de%20streaming.%20%C2%BFMe%20puedes%20brindar%20m%C3%A1s%20informaci%C3%B3n%3F" target="_blank" class="btn">Hablar en WhatsApp</a>
   </section>
