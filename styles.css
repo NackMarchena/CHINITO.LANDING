@@ -13,7 +13,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background: #0338e6;
+  background: #0e0d0d;
   position: sticky;
   top: 0;
   z-index: 1000; /*  muy importante para que quede por encima del carrusel */
@@ -47,33 +47,45 @@ header nav ul li a:hover {
 
 
 /* HERO */
+/* HERO */
 .hero {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0a0a0a, #1f1f1f);
-  color: white;
+  overflow: hidden;
+  color: #fff;
   padding: 20px;
 }
 
-/* ANIMACIÓN */
+/* Video de fondo */
+#hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* Ajusta el video sin deformarlo */
+  z-index: -1;         /* Mantenerlo detrás del texto */
+}
+
+/* Texto encima */
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animaciones */
 .fade-in {
   opacity: 0;
   transform: translateY(40px);
   animation: fadeInUp 2.5s ease-out forwards;
 }
-
-.fade-in.delay-0 {
-  animation-delay: 0.3s;
-}
-.fade-in.delay-1 {
-  animation-delay: 0.8s;
-}
-.fade-in.delay-2 {
-  animation-delay: 1.3s;
-}
+.fade-in.delay-0 { animation-delay: 0.3s; }
+.fade-in.delay-1 { animation-delay: 0.8s; }
+.fade-in.delay-2 { animation-delay: 1.3s; }
 
 @keyframes fadeInUp {
   from {
@@ -88,13 +100,22 @@ header nav ul li a:hover {
   }
 }
 
-/* RESPONSIVE */
+/* H1 con fondo negro */
 .hero-text h1 {
   font-size: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.7); /* Negro con transparencia */
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
 }
+
+/* Subtítulo */
 .hero-text p {
   font-size: 1.2rem;
+  margin-top: 15px;
 }
+
+/* Responsivo */
 @media (max-width: 768px) {
   .hero-text h1 {
     font-size: 2rem;
@@ -103,18 +124,41 @@ header nav ul li a:hover {
     font-size: 1rem;
   }
 }
+
+/* Botón */
 .hero-text .btn {
   margin-top: 20px;
-  padding: 12px 25px;
-  background: #0338e6;
+  padding: 15px 40px;
+  background: #f30505;
   color: #fff;
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
+  transition: background 0.3s ease;
+  display: inline-block;
 }
 .hero-text .btn:hover {
-  background: #0338e6;
+  background: #011f7a;
+}
+
+
+/* Botón de sonido */
+#sound-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 2;
+  transition: 0.3s;
+}
+#sound-toggle:hover {
+  background: rgba(243, 5, 5, 0.8);
 }
 
 

@@ -25,3 +25,17 @@ setInterval(() => {
   index = (index + 1) % slides.length;
   showSlide(index);
 }, 20000);
+
+
+const video = document.getElementById("hero-video");
+const soundBtn = document.getElementById("sound-toggle");
+
+soundBtn.addEventListener("click", () => {
+  if (video.muted) {
+    video.muted = false;
+    soundBtn.textContent = "🔇"; // cambiar icono
+  } else {
+    video.muted = true;
+    soundBtn.textContent = "🔊";
+  }
+});
